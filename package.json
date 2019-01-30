@@ -21,6 +21,8 @@
   "homepage": "https://github.com/Mikibot/Miki.Web.Frontend#readme",
   "dependencies": {
     "bulma": "^0.7.2",
+    "bulma-accordion": "^2.0.1",
+    "bulma-extensions": "^4.0.1",
     "node-sass": "^4.11.0",
     "node-static": "^0.7.11",
     "parcel-bundler": "^1.11.0"

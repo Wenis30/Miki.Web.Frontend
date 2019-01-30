@@ -1,6 +1,7 @@
 extends templates/base
 block page
-	script(src="../js/bulma-accordion.js")
+	script(type="text/javascript" src='../node_modules/bulma-extensions/bulma-accordion/dist/js/bulma-accordion.min.js')
+
 	include command_data.pug
 	.section.hero.is-textured
 		.container
@@ -13,7 +14,7 @@ block page
 				span.icon.is-small.is-left
 					i.fas.fa-search
 		.columns
-			.column.is-3
+			.column.is-3.modules
 				h3 Modules
 				each m in modules
 					label.control.has-icons-left.button(style="width: 100%;")
@@ -23,7 +24,7 @@ block page
 			section.column.accordions
 				each m in modules
 					each c in m.commands
-						article.accordion(id=c.module)
+						article.accordion(class=m.name)
 							.accordion-header.toggle
 								.level
 									h3.seperated.has-text-white >#{c.name}
@@ -47,3 +48,5 @@ block page
 													p #[b=p.name] - #{p.description}
 										br
 
+	script
+		include ../js/commands.ts
